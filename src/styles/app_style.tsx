@@ -60,11 +60,4 @@ export const Content = styled.div`
   margin: 0px auto;
   font-family: "Yatra One", cursive;
   position: relative;
-
-  a {
-    color: #fff;
-    &.active {
-      color: black;
-    }
-  }
 `;

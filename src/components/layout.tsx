@@ -1,25 +1,27 @@
 import React from "react";
-import { Outlet, NavLink } from "react-router-dom";
+import { Outlet } from "react-router-dom";
+
+import { Header, NavBar, NLink } from "../styles/layout_style";
 
 const Layout = () => {
   return (
     <>
-      <header>
-        <ul>
+      <Header>
+        <NavBar>
           <li>
-            <NavLink to="/">home</NavLink>
+            <NLink to="/">home</NLink>
           </li>
           <li>
-            <NavLink to="destination">destination</NavLink>
+            <NLink to="destination">destination</NLink>
           </li>
           <li>
-            <NavLink to="crew">crew</NavLink>
+            <NLink to="crew">crew</NLink>
           </li>
           <li>
-            <NavLink to="technology">technology</NavLink>
+            <NLink to="technology">technology</NLink>
           </li>
-        </ul>
-      </header>
+        </NavBar>
+      </Header>
       <Outlet />
     </>
   );

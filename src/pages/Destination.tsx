@@ -3,27 +3,31 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 
 import Slider from "../components/slider";
+import { fetchDestination } from "../store/actions";
+import { useTypeDispatch, useTypeSelector } from "../hooks/redux_hook";
 
 const Destination = () => {
   const [planets, setPlanets] = useState(["mars", "neptun", "upiter", "uran"]);
   const [opt, setOpt] = useState(0);
 
+  const dispatch = useTypeDispatch();
+  const { data, loading } = useTypeSelector(
+    (state) => state.destinationReducer
+  );
+
   useEffect(() => {
-    axios
-      .get("http://localhost:3001/destinations")
-      .then(function (response) {
-        // handle success
-        console.log(response);
-      })
-      .catch(function (error) {
-        // handle error
-        console.log(error);
-      });
+    dispatch(fetchDestination("destinations"));
   }, []);
+
+  console.log(data);
 
   return (
     <div>
-      <Slider slids={planets} />
+      {data.length ? (
+        <Slider slids={data.map((item) => item.name)} />
+      ) : (
+        "loading"
+      )}
     </div>
   );
 };

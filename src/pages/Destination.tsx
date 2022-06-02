@@ -1,45 +1,29 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import axios from "axios";
 
-import { WrapperSlider } from "../styles/destination_style";
+import Slider from "../components/slider";
 
 const Destination = () => {
   const [planets, setPlanets] = useState(["mars", "neptun", "upiter", "uran"]);
   const [opt, setOpt] = useState(0);
 
-  const settings = {
-    className: "",
-    arrows: false,
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    adaptiveHeight: true,
-  };
+  useEffect(() => {
+    axios
+      .get("http://localhost:3001/destinations")
+      .then(function (response) {
+        // handle success
+        console.log(response);
+      })
+      .catch(function (error) {
+        // handle error
+        console.log(error);
+      });
+  }, []);
 
   return (
     <div>
-      <WrapperSlider {...settings}>
-        <div>
-          <h3>1</h3>
-        </div>
-        <div>
-          <h3>2</h3>
-        </div>
-        <div>
-          <h3>3</h3>
-        </div>
-        <div>
-          <h3>4</h3>
-        </div>
-        <div>
-          <h3>5</h3>
-        </div>
-        <div>
-          <h3>6</h3>
-        </div>
-      </WrapperSlider>
+      <Slider slids={planets} />
     </div>
   );
 };

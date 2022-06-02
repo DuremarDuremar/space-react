@@ -39,7 +39,7 @@ export const fetchTechnology = () => async (dispatch: TypeDispatch) => {
   try {
     dispatch(technologySlice.actions.technologyFetching());
     const res = await axios.get<IItemTechnology[]>(
-      `http://localhost:3001/dtechnology`
+      `http://localhost:3001/technology`
     );
     setTimeout(
       () =>

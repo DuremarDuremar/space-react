@@ -6,7 +6,19 @@ import { fetchTechnology } from "../store/actions";
 import { useTypeDispatch, useTypeSelector } from "../hooks/redux_hook";
 
 const Technology = () => {
-  return <div>Technology</div>;
+  const dispatch = useTypeDispatch();
+  const { data, loading } = useTypeSelector((state) => state.technologyReducer);
+
+  useEffect(() => {
+    !data.length && dispatch(fetchTechnology());
+    !data.length && console.log(data);
+  }, []);
+
+  return (
+    <div>
+      {!loading ? <Slider slids={data.map((item) => item.name)} /> : "loading"}
+    </div>
+  );
 };
 
 export default Technology;

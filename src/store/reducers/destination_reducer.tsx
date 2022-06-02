@@ -1,14 +1,15 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { IItemDistanation } from "../type";
 
 interface State {
   loading: boolean;
-  data: [];
+  data: IItemDistanation[];
   error: string;
 }
 
 const initialStateAll: State = {
   loading: false,
-  data: [],
+  data: [] as IItemDistanation[],
   error: "",
 };
 

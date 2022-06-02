@@ -1,38 +1,35 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { IItemDistanation } from "../type";
+import { IItemCrew } from "../type";
 
 interface State {
   loading: boolean;
-  data: IItemDistanation[];
+  data: IItemCrew[];
   error: string;
 }
 
 const initialState: State = {
   loading: false,
-  data: [] as IItemDistanation[],
+  data: [] as IItemCrew[],
   error: "",
 };
 
-export const destinationSlice = createSlice({
-  name: "destination",
+export const crewSlice = createSlice({
+  name: "crew",
   initialState: initialState,
   reducers: {
-    destinationFetching(state) {
+    crewFetching(state) {
       state.loading = true;
     },
-    destinationFetchingSuccess(
-      state,
-      action: PayloadAction<IItemDistanation[]>
-    ) {
+    crewFetchingSuccess(state, action: PayloadAction<IItemCrew[]>) {
       state.loading = false;
       state.data = action.payload;
       state.error = "";
     },
-    destinationFetchingError(state, action: PayloadAction<string>) {
+    crewFetchingError(state, action: PayloadAction<string>) {
       state.loading = false;
       state.error = action.payload;
     },
   },
 });
 
-export const destinationReducer = destinationSlice.reducer;
+export const crewReducer = crewSlice.reducer;

@@ -1,38 +1,35 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { IItemDistanation } from "../type";
+import { IItemTechnology } from "../type";
 
 interface State {
   loading: boolean;
-  data: IItemDistanation[];
+  data: IItemTechnology[];
   error: string;
 }
 
 const initialState: State = {
   loading: false,
-  data: [] as IItemDistanation[],
+  data: [] as IItemTechnology[],
   error: "",
 };
 
-export const destinationSlice = createSlice({
-  name: "destination",
+export const technologySlice = createSlice({
+  name: "technology",
   initialState: initialState,
   reducers: {
-    destinationFetching(state) {
+    technologyFetching(state) {
       state.loading = true;
     },
-    destinationFetchingSuccess(
-      state,
-      action: PayloadAction<IItemDistanation[]>
-    ) {
+    technologyFetchingSuccess(state, action: PayloadAction<IItemTechnology[]>) {
       state.loading = false;
       state.data = action.payload;
       state.error = "";
     },
-    destinationFetchingError(state, action: PayloadAction<string>) {
+    technologyFetchingError(state, action: PayloadAction<string>) {
       state.loading = false;
       state.error = action.payload;
     },
   },
 });
 
-export const destinationReducer = destinationSlice.reducer;
+export const technologyReducer = technologySlice.reducer;

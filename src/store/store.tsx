@@ -1,7 +1,13 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import { destinationReducer } from "./reducers/destination_reducer";
+import { crewReducer } from "./reducers/crew_reducer";
+import { technologyReducer } from "./reducers/technology_reducer";
 
-const rootReducer = combineReducers({ destinationReducer });
+const rootReducer = combineReducers({
+  destinationReducer,
+  crewReducer,
+  technologyReducer,
+});
 
 export const setupStore = () => {
   return configureStore({

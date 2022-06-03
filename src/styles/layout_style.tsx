@@ -23,6 +23,15 @@ export const NavBar = styled.ul`
 export const NLink = styled(NavLink)`
   color: #fff;
   &.active {
-    color: black;
+    position: relative;
+    &:after {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 4px;
+      background-color: #fff;
+      position: absolute;
+      bottom: -24px;
+    }
   }
 `;

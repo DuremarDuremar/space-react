@@ -1,11 +1,11 @@
-import React from "react";
+import React, { FC } from "react";
 import { useEffect } from "react";
 
 import Slider from "../components/slider";
 import { fetchCrew } from "../store/actions";
 import { useTypeDispatch, useTypeSelector } from "../hooks/redux_hook";
 
-const Crew = () => {
+const Crew: FC = () => {
   const dispatch = useTypeDispatch();
   const { data, loading } = useTypeSelector((state) => state.crewReducer);
 

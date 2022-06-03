@@ -5,6 +5,9 @@ export const Header = styled.header`
   display: flex;
   justify-content: flex-end;
   margin-top: 40px;
+  right: 0;
+  position: absolute;
+  width: 100%;
 `;
 
 export const NavBar = styled.ul`

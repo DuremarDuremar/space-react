@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import backgroundDesktop from "../assets/home/background-home-desktop.jpg";
+import backgroundDesktop from "../assets/technology/background-technology-desktop.jpg";
 export const Content = styled.div`
   background: url(${backgroundDesktop}) center center fixed;
   min-height: 100vh;

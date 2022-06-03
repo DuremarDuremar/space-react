@@ -5,6 +5,8 @@ import Slider from "../components/slider";
 import { fetchCrew } from "../store/actions";
 import { useTypeDispatch, useTypeSelector } from "../hooks/redux_hook";
 
+import { Content } from "../styles/crew_style";
+
 const Crew: FC = () => {
   const dispatch = useTypeDispatch();
   const { data, loading } = useTypeSelector((state) => state.crewReducer);
@@ -15,9 +17,9 @@ const Crew: FC = () => {
   }, []);
 
   return (
-    <div>
+    <Content>
       {!loading ? <Slider slids={data.map((item) => item.name)} /> : "loading"}
-    </div>
+    </Content>
   );
 };
 

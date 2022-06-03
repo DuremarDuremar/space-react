@@ -9,16 +9,16 @@ const Layout = () => {
       <Header>
         <NavBar>
           <li>
-            <NLink to="/">home</NLink>
+            <NLink to="/">00 home</NLink>
           </li>
           <li>
-            <NLink to="destination">destination</NLink>
+            <NLink to="destination">01 destination</NLink>
           </li>
           <li>
-            <NLink to="crew">crew</NLink>
+            <NLink to="crew">02 crew</NLink>
           </li>
           <li>
-            <NLink to="technology">technology</NLink>
+            <NLink to="technology">03 technology</NLink>
           </li>
         </NavBar>
       </Header>

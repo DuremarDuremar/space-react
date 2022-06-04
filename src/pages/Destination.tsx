@@ -17,9 +17,15 @@ const Destination: FC = () => {
     !data.length && dispatch(fetchDestination());
   }, []);
 
+  const title = "01 PICK YOUR dESTINATION";
+
   return (
     <Content>
-      {!loading ? <Slider slids={data.map((item) => item)} /> : "loading"}
+      {!loading ? (
+        <Slider slids={data.map((item) => item)} title={title} />
+      ) : (
+        "loading"
+      )}
     </Content>
   );
 };

@@ -15,9 +15,15 @@ const Crew: FC = () => {
     !data.length && dispatch(fetchCrew());
   }, []);
 
+  const title = "PICK YOUR dESTINATION";
+
   return (
     <Content>
-      {!loading ? <Slider slids={data.map((item) => item)} /> : "loading"}
+      {!loading ? (
+        <Slider slids={data.map((item) => item)} title={title} />
+      ) : (
+        "loading"
+      )}
     </Content>
   );
 };

@@ -3,9 +3,10 @@ import { WrapperSlider, ItemSlider, Left, Right } from "../styles/slider_style";
 
 interface IProps {
   slids: any;
+  title: string;
 }
 
-const Slider: FC<IProps> = ({ slids }) => {
+const Slider: FC<IProps> = ({ slids, title }) => {
   const dotsItems = ["MOON", "MARS", "EUROPA", "TITAN"];
 
   const settings = {
@@ -47,18 +48,22 @@ const Slider: FC<IProps> = ({ slids }) => {
   console.log(slids);
 
   return (
-    <div>
-      <WrapperSlider {...settings}>
-        {slids.map((item: any) => (
-          <ItemSlider key={item.name}>
-            <Left>
-              {item.images.png && <img src={item.images.png} alt="344566778" />}
-            </Left>
-            <Right>{item.name}</Right>
-          </ItemSlider>
-        ))}
-      </WrapperSlider>
-    </div>
+    <WrapperSlider {...settings}>
+      {slids.map((item: any) => (
+        <ItemSlider key={item.name}>
+          <Left>
+            <h3>{title}</h3>
+            {item.images.webp && <img src={item.images.webp} alt={item.name} />}
+          </Left>
+          <Right>
+            <h4> {item.name}</h4>
+            <article>
+              {(item.description && item.description) || (item.bio && item.bio)}
+            </article>
+          </Right>
+        </ItemSlider>
+      ))}
+    </WrapperSlider>
   );
 };
 

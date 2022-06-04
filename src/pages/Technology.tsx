@@ -16,9 +16,15 @@ const Technology: FC = () => {
     !data.length && console.log(data);
   }, []);
 
+  const title = "PICK YOUR dESTINATION";
+
   return (
     <Content>
-      {!loading ? <Slider slids={data.map((item) => item)} /> : "loading"}
+      {!loading ? (
+        <Slider slids={data.map((item) => item)} title={title} />
+      ) : (
+        "loading"
+      )}
     </Content>
   );
 };

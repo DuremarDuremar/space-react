@@ -3,7 +3,7 @@ import Slider from "react-slick";
 
 export const WrapperSlider = styled(Slider)`
   width: 100%;
-  overflow: hidden;
+  overflow-x: hidden;
   color: #fff;
   display: flex;
   flex-direction: column-reverse;
@@ -63,8 +63,19 @@ export const WrapperSlider = styled(Slider)`
   }
 `;
 
-export const ItemSlider = styled.div``;
+export const ItemSlider = styled.div`
+  display: flex !important;
+  img {
+    max-width: 360px;
+    display: block;
+    margin: 0px auto;
+  }
+`;
 
-export const Left = styled.div``;
+export const Left = styled.div`
+  flex: 0 0 50%;
+`;
 
-export const Right = styled.div``;
+export const Right = styled.div`
+  flex: 0 0 50%;
+`;

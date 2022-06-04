@@ -13,8 +13,6 @@ const Destination: FC = () => {
     (state) => state.destinationReducer
   );
 
-  console.log(loading);
-
   useEffect(() => {
     !data.length && dispatch(fetchDestination());
   }, []);

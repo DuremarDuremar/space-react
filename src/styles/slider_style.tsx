@@ -4,6 +4,13 @@ import Slider from "react-slick";
 export const WrapperSlider = styled(Slider)`
   width: 100%;
   overflow: hidden;
+  color: #fff;
+  display: flex;
+  flex-direction: column-reverse;
+
+  .slick-slider {
+  }
+
   .slick-slide {
     width: 100%;
     height: 100%;
@@ -16,12 +23,14 @@ export const WrapperSlider = styled(Slider)`
       object-fit: contain;
     } */
   }
+  .slick-list {
+    display: flex;
+  }
+
   .slick-track {
     display: flex;
   }
   .slick-dots {
-    display: block;
-
     width: 100%;
     padding: 0;
     margin: 0;
@@ -33,7 +42,7 @@ export const WrapperSlider = styled(Slider)`
   .slick-dots li {
     position: relative;
     display: inline-block;
-    width: 10px;
+    /* width: 80px; */
     height: 10px;
     margin: 0 5px;
     padding: 0;

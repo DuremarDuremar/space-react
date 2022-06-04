@@ -13,12 +13,11 @@ const Crew: FC = () => {
 
   useEffect(() => {
     !data.length && dispatch(fetchCrew());
-    !data.length && console.log(data);
   }, []);
 
   return (
     <Content>
-      {!loading ? <Slider slids={data.map((item) => item.name)} /> : "loading"}
+      {!loading ? <Slider slids={data.map((item) => item)} /> : "loading"}
     </Content>
   );
 };

@@ -18,7 +18,7 @@ const Technology: FC = () => {
 
   return (
     <Content>
-      {!loading ? <Slider slids={data.map((item) => item.name)} /> : "loading"}
+      {!loading ? <Slider slids={data.map((item) => item)} /> : "loading"}
     </Content>
   );
 };

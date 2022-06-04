@@ -1,8 +1,8 @@
 import React, { FC } from "react";
-import { WrapperSlider } from "../styles/slider_style";
+import { WrapperSlider, ItemSlider, Left, Right } from "../styles/slider_style";
 
 interface IProps {
-  slids: string[];
+  slids: any;
 }
 
 const Slider: FC<IProps> = ({ slids }) => {
@@ -44,11 +44,18 @@ const Slider: FC<IProps> = ({ slids }) => {
     adaptiveHeight: true,
   };
 
+  console.log(slids);
+
   return (
     <div>
       <WrapperSlider {...settings}>
         {slids.map((item: any) => (
-          <div key={item}>{item}</div>
+          <ItemSlider key={item.name}>
+            <Left>
+              {item.images.png && <img src={item.images.png} alt="344566778" />}
+            </Left>
+            <Right>{item.name}</Right>
+          </ItemSlider>
         ))}
       </WrapperSlider>
     </div>

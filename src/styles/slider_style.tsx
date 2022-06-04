@@ -62,3 +62,9 @@ export const WrapperSlider = styled(Slider)`
     cursor: pointer;
   }
 `;
+
+export const ItemSlider = styled.div``;
+
+export const Left = styled.div``;
+
+export const Right = styled.div``;

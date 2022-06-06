@@ -22,7 +22,11 @@ const Destination: FC = () => {
   return (
     <Content>
       {!loading ? (
-        <Slider slids={data.map((item) => item)} title={title} />
+        <Slider
+          slids={data.map((item) => item)}
+          title={title}
+          typeSlider={"destination"}
+        />
       ) : (
         "loading"
       )}

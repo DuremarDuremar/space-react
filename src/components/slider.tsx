@@ -4,10 +4,11 @@ import { WrapperSlider, ItemSlider, Left, Right } from "../styles/slider_style";
 interface IProps {
   slids: any;
   title: string;
+  typeSlider?: string;
 }
 
-const Slider: FC<IProps> = ({ slids, title }) => {
-  const dotsItems = ["MOON", "MARS", "EUROPA", "TITAN"];
+const Slider: FC<IProps> = ({ slids, title, typeSlider }) => {
+  const dotsItems = slids.map((item: any) => item.name);
 
   const settings = {
     className: "",
@@ -29,12 +30,14 @@ const Slider: FC<IProps> = ({ slids, title }) => {
     customPaging: (i: any) => (
       <div
         style={{
-          width: "80px",
-          color: "blue",
-          // border: "1px blue solid",
+          width: typeSlider === "destination" ? "80px" : "30px",
+          height: "30px",
+          borderRadius: "50%",
+          backgroundColor:
+            typeSlider !== "destination" ? "#fff" : "transparent",
         }}
       >
-        {dotsItems[i]}
+        {typeSlider === "destination" ? dotsItems[i] : null}
       </div>
     ),
     fade: true,
@@ -45,8 +48,6 @@ const Slider: FC<IProps> = ({ slids, title }) => {
     adaptiveHeight: true,
   };
 
-  console.log(slids);
-
   return (
     <WrapperSlider {...settings}>
       {slids.map((item: any) => (
@@ -56,8 +57,17 @@ const Slider: FC<IProps> = ({ slids, title }) => {
             {item.images.webp && <img src={item.images.webp} alt={item.name} />}
           </Left>
           <Right>
-            <h4> {item.name}</h4>
+            {item.role && <h4>{item.role}</h4>}
+            <h2> {item.name}</h2>
             <article>{item.description || item.bio}</article>
+            {item.distance && item.travel && (
+              <ul>
+                <li>avg.distance</li>
+                <li>est.travel time</li>
+                <li>{item.distance}</li>
+                <li>{item.travel}</li>
+              </ul>
+            )}
           </Right>
         </ItemSlider>
       ))}

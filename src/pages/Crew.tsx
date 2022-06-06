@@ -15,7 +15,7 @@ const Crew: FC = () => {
     !data.length && dispatch(fetchCrew());
   }, []);
 
-  const title = "PICK YOUR dESTINATION";
+  const title = "02 PICK YOUR dESTINATION";
 
   return (
     <Content>

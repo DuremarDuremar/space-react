@@ -16,7 +16,7 @@ const Technology: FC = () => {
     !data.length && console.log(data);
   }, []);
 
-  const title = "PICK YOUR dESTINATION";
+  const title = "03 PICK YOUR dESTINATION";
 
   return (
     <Content>

@@ -2,27 +2,19 @@ import styled from "styled-components";
 import Slider from "react-slick";
 
 export const WrapperSlider = styled(Slider)`
-  width: 100%;
+  /* width: 100%; */
   /* overflow-x: hidden; */
+  position: relative;
   color: #fff;
-  padding-top: 200px;
-  display: flex;
-  flex-direction: column-reverse;
+  padding: 150px 70px 0 70px;
+  /* display: flex;
+  flex-direction: column-reverse; */
 
   .slick-slider {
   }
 
   .slick-slide {
-    width: 100%;
-    /* height: 100%; */
-    /* img {
-      display: block;
-      margin: 0px auto;
-      width: 100%;
-      max-width: 80vw;
-      max-height: 90vh;
-      object-fit: contain;
-    } */
+    /* width: 100%; */
   }
   .slick-list {
     display: flex;
@@ -35,7 +27,9 @@ export const WrapperSlider = styled(Slider)`
     width: 100%;
     padding: 0;
     margin: 0;
-
+    position: absolute;
+    top: 220px;
+    left: 250px;
     list-style: none;
 
     text-align: center;
@@ -68,11 +62,33 @@ export const ItemSlider = styled.div`
   display: flex !important;
   img {
     max-width: 360px;
-    height: 100%;
     display: block;
     margin: 0px auto;
+    padding-top: 50px;
+  }
+
+  h2 {
+    font-size: 6vw;
+    font-weight: 300;
   }
   article {
+    max-width: 430px;
+    color: #fff;
+    position: relative;
+    &:after {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 2px;
+      background-color: #7d7e83;
+      position: absolute;
+      bottom: -34px;
+    }
+  }
+  ul {
+    padding-top: 60px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
   }
 `;
 
@@ -82,4 +98,5 @@ export const Left = styled.div`
 
 export const Right = styled.div`
   flex: 0 0 50%;
+  padding-top: 100px;
 `;

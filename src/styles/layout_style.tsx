@@ -8,6 +8,7 @@ export const Header = styled.header`
   right: 0;
   position: absolute;
   width: 100%;
+  z-index: 3;
 `;
 
 export const NavBar = styled.ul`

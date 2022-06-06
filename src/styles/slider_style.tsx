@@ -3,8 +3,9 @@ import Slider from "react-slick";
 
 export const WrapperSlider = styled(Slider)`
   width: 100%;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
   color: #fff;
+  padding-top: 200px;
   display: flex;
   flex-direction: column-reverse;
 
@@ -13,7 +14,7 @@ export const WrapperSlider = styled(Slider)`
 
   .slick-slide {
     width: 100%;
-    height: 100%;
+    /* height: 100%; */
     /* img {
       display: block;
       margin: 0px auto;
@@ -67,8 +68,11 @@ export const ItemSlider = styled.div`
   display: flex !important;
   img {
     max-width: 360px;
+    height: 100%;
     display: block;
     margin: 0px auto;
+  }
+  article {
   }
 `;
 

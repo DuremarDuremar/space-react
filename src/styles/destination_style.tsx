@@ -5,7 +5,7 @@ export const Content = styled.div`
   background: url(${backgroundDesktop}) center center fixed;
   min-height: 100vh;
   background-size: cover;
-  display: flex;
+  /* display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: center; */
 `;

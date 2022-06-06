@@ -57,9 +57,7 @@ const Slider: FC<IProps> = ({ slids, title }) => {
           </Left>
           <Right>
             <h4> {item.name}</h4>
-            <article>
-              {(item.description && item.description) || (item.bio && item.bio)}
-            </article>
+            <article>{item.description || item.bio}</article>
           </Right>
         </ItemSlider>
       ))}

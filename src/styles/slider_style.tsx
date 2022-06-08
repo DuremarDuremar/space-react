@@ -2,19 +2,17 @@ import styled from "styled-components";
 import Slider from "react-slick";
 
 export const WrapperSlider = styled(Slider)`
-  /* width: 100%; */
-  /* overflow-x: hidden; */
   position: relative;
   color: #fff;
   padding: 150px 70px 0 70px;
-  /* display: flex;
-  flex-direction: column-reverse; */
-
+  h3 {
+    position: absolute;
+    left: 0;
+  }
   .slick-slider {
   }
 
   .slick-slide {
-    /* width: 100%; */
   }
   .slick-list {
     display: flex;
@@ -37,7 +35,6 @@ export const WrapperSlider = styled(Slider)`
   .slick-dots li {
     position: relative;
     display: inline-block;
-    /* width: 80px; */
     height: 10px;
     margin: 0 5px;
     padding: 0;
@@ -58,8 +55,12 @@ export const WrapperSlider = styled(Slider)`
   }
 `;
 
-export const ItemSlider = styled.div`
+export const ItemSlider = styled.div<{
+  typeSlider?: string;
+}>`
   display: flex !important;
+  flex-direction: ${(props) =>
+    props.typeSlider === "destination" ? "row" : "row-reverse"};
   img {
     max-width: 360px;
     display: block;
@@ -77,7 +78,8 @@ export const ItemSlider = styled.div`
     position: relative;
     &:after {
       content: "";
-      display: block;
+      display: ${(props) =>
+        props.typeSlider === "destination" ? "block" : "none"};
       width: 100%;
       height: 2px;
       background-color: #7d7e83;

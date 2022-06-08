@@ -51,9 +51,9 @@ const Slider: FC<IProps> = ({ slids, title, typeSlider }) => {
   return (
     <WrapperSlider {...settings}>
       {slids.map((item: any) => (
-        <ItemSlider key={item.name}>
+        <ItemSlider key={item.name} typeSlider={typeSlider}>
+          <h3>{title}</h3>
           <Left>
-            <h3>{title}</h3>
             {item.images.webp && <img src={item.images.webp} alt={item.name} />}
           </Left>
           <Right>

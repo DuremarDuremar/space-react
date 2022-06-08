@@ -5,7 +5,7 @@ import Slider from "../components/slider";
 import { fetchTechnology } from "../store/actions";
 import { useTypeDispatch, useTypeSelector } from "../hooks/redux_hook";
 
-import { Content } from "../styles/technology";
+import { Content } from "../styles/technology_style";
 
 const Technology: FC = () => {
   const dispatch = useTypeDispatch();

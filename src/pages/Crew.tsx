@@ -15,16 +15,11 @@ const Crew: FC = () => {
     !data.length && dispatch(fetchCrew());
   }, []);
 
-  const title = "02 MEET YOUR CREW";
-
   return (
     <Content>
+      <h3>02 MEET YOUR CREW</h3>
       {!loading ? (
-        <Slider
-          slids={data.map((item) => item)}
-          title={title}
-          typeSlider={"crew"}
-        />
+        <Slider slids={data.map((item) => item)} typeSlider={"crew"} />
       ) : (
         "loading"
       )}

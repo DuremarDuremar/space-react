@@ -22,7 +22,7 @@ const Home = () => {
           </article>
         </ContainerLeft>
         <ContainerRight>
-          <h3>EXPLORE</h3>
+          <h4>EXPLORE</h4>
         </ContainerRight>
       </Wrapper>
     </Content>

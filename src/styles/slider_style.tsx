@@ -1,14 +1,14 @@
 import styled from "styled-components";
 import Slider from "react-slick";
 
-export const WrapperSlider = styled(Slider)`
+export const WrapperSlider = styled(Slider)<{
+  typeSlider: string;
+}>`
   position: relative;
   color: #fff;
-  padding: 150px 70px 0 70px;
-  h3 {
-    position: absolute;
-    left: 0;
-  }
+  padding: 20px 70px 0 70px;
+  max-height: 400px;
+
   .slick-slider {
   }
 
@@ -22,15 +22,24 @@ export const WrapperSlider = styled(Slider)`
     display: flex;
   }
   .slick-dots {
-    width: 100%;
+    /* width: 100%; */
     padding: 0;
     margin: 0;
     position: absolute;
-    top: 220px;
-    left: 250px;
+    top: ${(props) =>
+      props.typeSlider === "destination"
+        ? "60px"
+        : props.typeSlider === "crew"
+        ? "380px"
+        : "0px"};
+    left: ${(props) =>
+      props.typeSlider === "destination"
+        ? "calc(40vw + 140px)"
+        : props.typeSlider === "crew"
+        ? "60px"
+        : "0px"};
     list-style: none;
-
-    text-align: center;
+    /* text-align: center; */
   }
   .slick-dots li {
     position: relative;
@@ -56,20 +65,17 @@ export const WrapperSlider = styled(Slider)`
 `;
 
 export const ItemSlider = styled.div<{
-  typeSlider?: string;
+  typeSlider: string;
 }>`
   display: flex !important;
   flex-direction: ${(props) =>
     props.typeSlider === "destination" ? "row" : "row-reverse"};
-  img {
-    max-width: 360px;
-    display: block;
-    margin: 0px auto;
-    padding-top: 50px;
-  }
+  overflow: hidden;
 
   h2 {
-    font-size: 6vw;
+    font-size: ${(props) =>
+      props.typeSlider === "destination" ? "6vw" : "4vw"};
+
     font-weight: 300;
   }
   article {
@@ -94,11 +100,18 @@ export const ItemSlider = styled.div<{
   }
 `;
 
-export const Left = styled.div`
+export const Img = styled.div`
   flex: 0 0 50%;
+  img {
+    max-width: 360px;
+    display: block;
+    margin: 0px auto;
+    padding-top: 50px;
+    background-size: contain;
+  }
 `;
 
-export const Right = styled.div`
+export const Text = styled.div`
   flex: 0 0 50%;
   padding-top: 100px;
 `;

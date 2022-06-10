@@ -16,12 +16,11 @@ const Technology: FC = () => {
     !data.length && console.log(data);
   }, []);
 
-  const title = "03 PICK YOUR dESTINATION";
-
   return (
     <Content>
+      <h3>03 PICK YOUR dESTINATION</h3>
       {!loading ? (
-        <Slider slids={data.map((item) => item)} title={title} />
+        <Slider slids={data.map((item) => item)} typeSlider={"technology"} />
       ) : (
         "loading"
       )}

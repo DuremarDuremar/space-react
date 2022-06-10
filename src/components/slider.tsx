@@ -1,13 +1,12 @@
 import React, { FC } from "react";
-import { WrapperSlider, ItemSlider, Left, Right } from "../styles/slider_style";
+import { WrapperSlider, ItemSlider, Img, Text } from "../styles/slider_style";
 
 interface IProps {
   slids: any;
-  title: string;
-  typeSlider?: string;
+  typeSlider: string;
 }
 
-const Slider: FC<IProps> = ({ slids, title, typeSlider }) => {
+const Slider: FC<IProps> = ({ slids, typeSlider }) => {
   const dotsItems = slids.map((item: any) => item.name);
 
   const settings = {
@@ -48,15 +47,16 @@ const Slider: FC<IProps> = ({ slids, title, typeSlider }) => {
     adaptiveHeight: true,
   };
 
+  console.log(typeSlider);
+
   return (
-    <WrapperSlider {...settings}>
+    <WrapperSlider {...settings} typeSlider={typeSlider}>
       {slids.map((item: any) => (
         <ItemSlider key={item.name} typeSlider={typeSlider}>
-          <h3>{title}</h3>
-          <Left>
+          <Img>
             {item.images.webp && <img src={item.images.webp} alt={item.name} />}
-          </Left>
-          <Right>
+          </Img>
+          <Text>
             {item.role && <h4>{item.role}</h4>}
             <h2> {item.name}</h2>
             <article>{item.description || item.bio}</article>
@@ -68,7 +68,7 @@ const Slider: FC<IProps> = ({ slids, title, typeSlider }) => {
                 <li>{item.travel}</li>
               </ul>
             )}
-          </Right>
+          </Text>
         </ItemSlider>
       ))}
     </WrapperSlider>

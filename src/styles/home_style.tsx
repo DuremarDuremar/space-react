@@ -44,7 +44,7 @@ export const ContainerRight = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  h3 {
+  h4 {
     color: #7d7e83;
     background-color: #ffffff;
     padding: 70px 40px;

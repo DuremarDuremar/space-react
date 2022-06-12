@@ -29,11 +29,11 @@ const Slider: FC<IProps> = ({ slids, typeSlider }) => {
     customPaging: (i: any) => (
       <div
         style={{
-          width: typeSlider === "destination" ? "80px" : "30px",
-          height: "30px",
+          width: typeSlider === "destination" ? "80px" : "14px",
+          height: "14px",
           borderRadius: "50%",
           backgroundColor:
-            typeSlider !== "destination" ? "#fff" : "transparent",
+            typeSlider !== "destination" ? "#7d7e83" : "transparent",
         }}
       >
         {typeSlider === "destination" ? dotsItems[i] : null}

@@ -39,7 +39,14 @@ export const WrapperSlider = styled(Slider)<{
         ? "60px"
         : "0px"};
     list-style: none;
-    /* text-align: center; */
+    .slick-active div {
+      ${(props) =>
+        props.typeSlider === "crew" &&
+        `
+        background-color: #fff !important;
+      
+    `}
+    }
   }
   .slick-dots li {
     position: relative;
@@ -70,7 +77,7 @@ export const ItemSlider = styled.div<{
   display: flex !important;
   flex-direction: ${(props) =>
     props.typeSlider === "destination" ? "row" : "row-reverse"};
-  overflow: hidden;
+  /* overflow: hidden; */
 
   h2 {
     font-size: ${(props) =>

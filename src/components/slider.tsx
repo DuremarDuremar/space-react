@@ -37,7 +37,11 @@ const Slider: FC<IProps> = ({ slids, typeSlider }) => {
           textAlign: "center",
         }}
       >
-        {typeSlider === "destination" ? dotsItems[i] : null}
+        {typeSlider === "destination"
+          ? dotsItems[i]
+          : typeSlider === "technology"
+          ? i + 1
+          : null}
       </div>
     ),
     fade: true,
@@ -54,7 +58,7 @@ const Slider: FC<IProps> = ({ slids, typeSlider }) => {
     <WrapperSlider {...settings} typeSlider={typeSlider}>
       {slids.map((item: any) => (
         <ItemSlider key={item.name} typeSlider={typeSlider}>
-          <Img>
+          <Img typeSlider={typeSlider}>
             {
               <img
                 src={item.images.webp || item.images.portrait}

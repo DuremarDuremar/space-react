@@ -6,7 +6,8 @@ export const WrapperSlider = styled(Slider)<{
 }>`
   position: relative;
   color: #fff;
-  padding: 20px 70px 0 70px;
+  padding: ${(props) =>
+    props.typeSlider === "technology" ? "20px 0 0 70px" : "20px 70px 0 70px"};
   max-height: 400px;
 
   .slick-slider {
@@ -130,15 +131,19 @@ export const ItemSlider = styled.div<{
   }
 `;
 
-export const Img = styled.div`
+export const Img = styled.div<{
+  typeSlider: string;
+}>`
   flex: 0 0 50%;
   img {
     width: 380px;
-    height: 90%;
+    /* height: 90%; */
     display: block;
     margin: 0px auto;
     padding-top: 50px;
     background-size: cover;
+    margin: ${(props) =>
+      props.typeSlider === "technology" ? "0 0 0 auto" : " 0px auto"};
   }
 `;
 

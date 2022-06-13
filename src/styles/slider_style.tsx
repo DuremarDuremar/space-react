@@ -39,12 +39,35 @@ export const WrapperSlider = styled(Slider)<{
         ? "60px"
         : "0px"};
     list-style: none;
+
+    ul {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 20px;
+    }
+
     .slick-active div {
       ${(props) =>
         props.typeSlider === "crew" &&
         `
         background-color: #fff !important;
       
+    `}
+      ${(props) =>
+        props.typeSlider === "destination" &&
+        `
+         position: relative;
+         &:after {
+          content: "";
+          display: block;
+          width: 100%;
+          height: 3px;
+          background-color: #fff;
+          position: absolute;
+          bottom: -22px;
+         
+                    }
+                       
     `}
     }
   }
@@ -110,11 +133,12 @@ export const ItemSlider = styled.div<{
 export const Img = styled.div`
   flex: 0 0 50%;
   img {
-    max-width: 360px;
+    width: 380px;
+    height: 90%;
     display: block;
     margin: 0px auto;
     padding-top: 50px;
-    background-size: contain;
+    background-size: cover;
   }
 `;
 

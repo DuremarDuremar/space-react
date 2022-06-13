@@ -18,7 +18,7 @@ const Technology: FC = () => {
 
   return (
     <Content>
-      <h3>03 PICK YOUR dESTINATION</h3>
+      <h3>03 SPACE LAUNCH 101</h3>
       {!loading ? (
         <Slider slids={data.map((item) => item)} typeSlider={"technology"} />
       ) : (

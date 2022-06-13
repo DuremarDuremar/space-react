@@ -29,11 +29,12 @@ const Slider: FC<IProps> = ({ slids, typeSlider }) => {
     customPaging: (i: any) => (
       <div
         style={{
-          width: typeSlider === "destination" ? "80px" : "14px",
+          width: typeSlider === "destination" ? "100%" : "14px",
           height: "14px",
           borderRadius: "50%",
           backgroundColor:
             typeSlider !== "destination" ? "#7d7e83" : "transparent",
+          textAlign: "center",
         }}
       >
         {typeSlider === "destination" ? dotsItems[i] : null}
@@ -54,7 +55,12 @@ const Slider: FC<IProps> = ({ slids, typeSlider }) => {
       {slids.map((item: any) => (
         <ItemSlider key={item.name} typeSlider={typeSlider}>
           <Img>
-            {item.images.webp && <img src={item.images.webp} alt={item.name} />}
+            {
+              <img
+                src={item.images.webp || item.images.portrait}
+                alt={item.name}
+              />
+            }
           </Img>
           <Text>
             {item.role && <h4>{item.role}</h4>}

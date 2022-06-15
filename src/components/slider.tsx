@@ -66,7 +66,8 @@ const Slider: FC<IProps> = ({ slids, typeSlider }) => {
               />
             }
           </Img>
-          <Text>
+          <Text typeSlider={typeSlider}>
+            {typeSlider === "technology" && <h5>THE TERMINOLOGY...</h5>}
             {item.role && <h4>{item.role}</h4>}
             <h2> {item.name}</h2>
             <article>{item.description || item.bio}</article>

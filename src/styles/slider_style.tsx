@@ -32,18 +32,23 @@ export const WrapperSlider = styled(Slider)<{
         ? "60px"
         : props.typeSlider === "crew"
         ? "380px"
-        : "0px"};
+        : "170px"};
     left: ${(props) =>
       props.typeSlider === "destination"
         ? "calc(40vw + 140px)"
         : props.typeSlider === "crew"
         ? "60px"
-        : "0px"};
+        : "6vw"};
     list-style: none;
 
     ul {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      ${(props) =>
+        props.typeSlider === "technology" &&
+        ` grid-template-rows: repeat(3, 1fr);`}
+      ${(props) =>
+        props.typeSlider != "technology" &&
+        ` grid-template-columns: repeat(4, 1fr);`}
       grid-gap: 20px;
     }
 
@@ -134,9 +139,10 @@ export const ItemSlider = styled.div<{
 export const Img = styled.div<{
   typeSlider: string;
 }>`
-  flex: 0 0 50%;
+  flex: ${(props) =>
+    props.typeSlider === "technology" ? "0 0 42%" : "0 0 50%"};
   img {
-    width: 380px;
+    max-width: 380px;
     /* height: 90%; */
     display: block;
     margin: 0px auto;
@@ -147,7 +153,10 @@ export const Img = styled.div<{
   }
 `;
 
-export const Text = styled.div`
-  flex: 0 0 50%;
+export const Text = styled.div<{
+  typeSlider: string;
+}>`
+  flex: ${(props) =>
+    props.typeSlider === "technology" ? "0 0 42%" : "0 0 50%"};
   padding-top: 100px;
 `;

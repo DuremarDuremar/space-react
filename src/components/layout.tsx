@@ -1,12 +1,17 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
+import logo from "../assets/shared/logo.svg";
 
-import { Header, NavBar, NLink } from "../styles/layout_style";
+import { Header, Logo, NavBar, NLink } from "../styles/layout_style";
 
 const Layout = () => {
   return (
     <>
       <Header>
+        <Logo>
+          <img src={logo} alt="logo" />
+        </Logo>
+
         <NavBar>
           <li>
             <NLink to="/">00 home</NLink>

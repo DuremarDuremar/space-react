@@ -32,7 +32,7 @@ export const WrapperSlider = styled(Slider)<{
         ? "60px"
         : props.typeSlider === "crew"
         ? "380px"
-        : "170px"};
+        : "130px"};
     left: ${(props) =>
       props.typeSlider === "destination"
         ? "calc(40vw + 140px)"
@@ -45,18 +45,26 @@ export const WrapperSlider = styled(Slider)<{
       display: grid;
       ${(props) =>
         props.typeSlider === "technology" &&
-        ` grid-template-rows: repeat(3, 1fr);`}
+        ` grid-template-rows: repeat(3, 1fr);
+         grid-gap: 65px;
+        `}
       ${(props) =>
         props.typeSlider != "technology" &&
-        ` grid-template-columns: repeat(4, 1fr);`}
-      grid-gap: 20px;
+        ` grid-template-columns: repeat(4, 1fr);
+          grid-gap: 20px;
+        `}
     }
 
     .slick-active div {
       ${(props) =>
-        props.typeSlider === "crew" &&
+        props.typeSlider != "destination" &&
         `
         background-color: #fff !important;
+        color: #0B0D1A !important;
+        font-size: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
       
     `}
       ${(props) =>
@@ -85,6 +93,16 @@ export const WrapperSlider = styled(Slider)<{
     padding: 0;
     cursor: pointer;
     transition: width 0.3s ease-in-out;
+    div {
+      ${(props) =>
+        props.typeSlider != "destination" &&
+        `
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      
+    `}
+    }
   }
   .slick-dots li button {
     font-size: 0;

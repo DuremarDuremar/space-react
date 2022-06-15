@@ -29,12 +29,17 @@ const Slider: FC<IProps> = ({ slids, typeSlider }) => {
     customPaging: (i: any) => (
       <div
         style={{
-          width: typeSlider === "destination" ? "100%" : "14px",
-          height: "14px",
+          width:
+            typeSlider === "destination"
+              ? "100%"
+              : typeSlider === "crew"
+              ? "14px"
+              : "50px",
+          height: typeSlider === "technology" ? "50px" : "14px",
           borderRadius: "50%",
-          backgroundColor:
-            typeSlider !== "destination" ? "#7d7e83" : "transparent",
+          backgroundColor: typeSlider === "crew" ? "#7d7e83" : "transparent",
           textAlign: "center",
+          border: typeSlider === "technology" ? "1px solid #7d7e83" : "none",
         }}
       >
         {typeSlider === "destination"

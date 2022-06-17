@@ -55,3 +55,9 @@ export const NLink = styled(NavLink)`
     }
   }
 `;
+
+export const Form = styled.div`
+  color: #fff;
+  padding-bottom: 3vw;
+  padding-left: 4vw;
+`;

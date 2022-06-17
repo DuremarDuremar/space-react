@@ -2,7 +2,7 @@ import React from "react";
 import { Outlet } from "react-router-dom";
 import logo from "../assets/shared/logo.svg";
 
-import { Header, Logo, NavBar, NLink } from "../styles/layout_style";
+import { Header, Logo, Form, NavBar, NLink } from "../styles/layout_style";
 
 const Layout = () => {
   return (
@@ -10,6 +10,9 @@ const Layout = () => {
       <Header>
         <Logo>
           <img src={logo} alt="logo" />
+          <Form>
+            <input type="text" /> <input type="text" />
+          </Form>
         </Logo>
 
         <NavBar>

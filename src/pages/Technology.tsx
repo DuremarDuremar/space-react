@@ -1,5 +1,6 @@
 import React, { FC } from "react";
 import { useEffect } from "react";
+import { SpinnerDotted } from "spinners-react";
 
 import Slider from "../components/slider";
 import { fetchTechnology } from "../store/actions";
@@ -18,11 +19,15 @@ const Technology: FC = () => {
 
   return (
     <Content>
-      <h3>03 SPACE LAUNCH 101</h3>
       {!loading ? (
-        <Slider slids={data.map((item) => item)} typeSlider={"technology"} />
+        <>
+          <h3>03 SPACE LAUNCH 101</h3>
+          <Slider slids={data.map((item) => item)} typeSlider={"technology"} />
+        </>
       ) : (
-        "loading"
+        <div className="spinner">
+          <SpinnerDotted size={100} thickness={100} speed={100} color="#fff" />
+        </div>
       )}
     </Content>
   );

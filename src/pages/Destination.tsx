@@ -1,5 +1,6 @@
 import React, { FC } from "react";
 import { useEffect } from "react";
+import { SpinnerDotted } from "spinners-react";
 
 import Slider from "../components/slider";
 import { fetchDestination } from "../store/actions";
@@ -19,11 +20,15 @@ const Destination: FC = () => {
 
   return (
     <Content>
-      <h3>01 PICK YOUR dESTINATION</h3>
       {!loading ? (
-        <Slider slids={data.map((item) => item)} typeSlider={"destination"} />
+        <>
+          <h3>01 PICK YOUR dESTINATION</h3>
+          <Slider slids={data.map((item) => item)} typeSlider={"destination"} />
+        </>
       ) : (
-        "loading"
+        <div className="spinner">
+          <SpinnerDotted size={100} thickness={100} speed={100} color="#fff" />
+        </div>
       )}
     </Content>
   );

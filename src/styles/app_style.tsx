@@ -66,4 +66,10 @@ export const Content = styled.div`
     padding-top: 150px;
     padding-left: 100px;
   }
+  .spinner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
 `;

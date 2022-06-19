@@ -15,7 +15,7 @@ const Technology: FC = () => {
   useEffect(() => {
     !data.length && dispatch(fetchTechnology());
     !data.length && console.log(data);
-  }, []);
+  }, [data]);
 
   return (
     <Content>

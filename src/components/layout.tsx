@@ -1,20 +1,18 @@
-import React from "react";
+import React, { FC } from "react";
 import { Outlet } from "react-router-dom";
+
+import Inputs from "./inputs";
 import logo from "../assets/shared/logo.svg";
+import { Header, Logo, NavBar, NLink } from "../styles/layout_style";
 
-import { Header, Logo, Form, NavBar, NLink } from "../styles/layout_style";
-
-const Layout = () => {
+const Layout: FC = () => {
   return (
     <>
       <Header>
         <Logo>
           <img src={logo} alt="logo" />
-          <Form>
-            <input type="text" /> <input type="text" />
-          </Form>
         </Logo>
-
+        <Inputs />
         <NavBar>
           <li>
             <NLink to="/">00 home</NLink>

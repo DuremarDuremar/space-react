@@ -49,7 +49,7 @@ export const WrapperSlider = styled(Slider)<{
          grid-gap: 65px;
         `}
       ${(props) =>
-        props.typeSlider != "technology" &&
+        props.typeSlider !== "technology" &&
         ` grid-template-columns: repeat(4, 1fr);
           grid-gap: 20px;
         `}
@@ -57,7 +57,7 @@ export const WrapperSlider = styled(Slider)<{
 
     .slick-active div {
       ${(props) =>
-        props.typeSlider != "destination" &&
+        props.typeSlider !== "destination" &&
         `
         background-color: #fff !important;
         color: #0B0D1A !important;
@@ -95,7 +95,7 @@ export const WrapperSlider = styled(Slider)<{
     transition: width 0.3s ease-in-out;
     div {
       ${(props) =>
-        props.typeSlider != "destination" &&
+        props.typeSlider !== "destination" &&
         `
         display: flex;
         align-items: center;

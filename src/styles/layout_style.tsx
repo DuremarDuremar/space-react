@@ -30,6 +30,12 @@ export const Logo = styled.div`
   }
 `;
 
+export const Form = styled.form`
+  color: #fff;
+  padding-bottom: 3vw;
+  padding-left: 4vw;
+`;
+
 export const NavBar = styled.ul`
   display: flex;
   height: 70px;
@@ -54,10 +60,4 @@ export const NLink = styled(NavLink)`
       bottom: -24px;
     }
   }
-`;
-
-export const Form = styled.div`
-  color: #fff;
-  padding-bottom: 3vw;
-  padding-left: 4vw;
 `;

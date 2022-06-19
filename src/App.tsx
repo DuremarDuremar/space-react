@@ -13,7 +13,6 @@ const App = () => {
   return (
     <>
       <Global />
-
       <Content>
         <Routes>
           <Route path="/" element={<Layout />}>

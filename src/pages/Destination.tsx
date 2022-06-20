@@ -16,7 +16,7 @@ const Destination: FC = () => {
 
   useEffect(() => {
     !data.length && dispatch(fetchDestination());
-  }, [data]);
+  }, [data, dispatch]);
 
   return (
     <Content>

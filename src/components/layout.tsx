@@ -5,6 +5,8 @@ import Inputs from "./inputs";
 import logo from "../assets/shared/logo.svg";
 import { Header, Logo, NavBar, NLink } from "../styles/layout_style";
 
+console.log("layout");
+
 const Layout: FC = () => {
   return (
     <>

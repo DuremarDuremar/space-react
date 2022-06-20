@@ -14,7 +14,7 @@ const Crew: FC = () => {
 
   useEffect(() => {
     !data.length && dispatch(fetchCrew());
-  }, [data]);
+  }, [data, dispatch]);
 
   return (
     <Content>

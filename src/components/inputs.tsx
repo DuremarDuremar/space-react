@@ -21,6 +21,7 @@ const Inputs: FC = () => {
   const onSubmit: SubmitHandler<Inputs> = (data) => setValue(data);
 
   console.log(value);
+  console.log("inputs2");
 
   return (
     <Form onSubmit={handleSubmit(onSubmit)}>

@@ -10,6 +10,8 @@ import Layout from "./components/layout";
 import { Global, Content } from "./styles/app_style";
 
 const App = () => {
+  console.log("app");
+
   return (
     <>
       <Global />

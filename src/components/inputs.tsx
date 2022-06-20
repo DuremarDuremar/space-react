@@ -3,31 +3,46 @@ import { useForm, SubmitHandler } from "react-hook-form";
 
 import { Form } from "../styles/layout_style";
 
-type Inputs = {
-  example: any;
-  exampleRequired: any;
+type Input = {
+  name: string;
+  password: string;
 };
 
 const Inputs: FC = () => {
-  const [value, setValue] = useState<any>("");
+  const [value, setValue] = useState<Input>({} as Input);
 
   const {
     register,
     handleSubmit,
-    watch,
     formState: { errors },
-  } = useForm<Inputs>();
+    reset,
+  } = useForm<Input>();
 
-  const onSubmit: SubmitHandler<Inputs> = (data) => setValue(data);
+  const onSubmit: SubmitHandler<Input> = (data) => {
+    setValue(data);
+    reset();
+  };
 
-  console.log(value);
-  console.log("inputs2");
+  console.log("value", value);
+  console.log("errors", errors);
 
   return (
     <Form onSubmit={handleSubmit(onSubmit)}>
-      <input {...register("example")} placeholder="name" />{" "}
-      <input {...register("exampleRequired")} placeholder="password" />
-      <input type="submit" />
+      <div>
+        <input
+          {...register("name", { required: true, minLength: 3 })}
+          placeholder="name"
+        />{" "}
+        <p>{errors.name?.type}</p>
+      </div>
+      <div>
+        <input
+          {...register("password", { required: true, minLength: 6 })}
+          placeholder="password"
+        />
+        <p>{errors.password?.type}</p>
+      </div>
+      <button type="submit">submit</button>
     </Form>
   );
 };

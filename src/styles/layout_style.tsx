@@ -31,9 +31,15 @@ export const Logo = styled.div`
 `;
 
 export const Form = styled.form`
+  display: flex;
   color: #fff;
   padding-bottom: 3vw;
   padding-left: 4vw;
+
+  p {
+    color: #7d7e83;
+    font-size: 10px;
+  }
 `;
 
 export const NavBar = styled.ul`

@@ -13,8 +13,9 @@ const Layout: FC = () => {
       <Header>
         <Logo>
           <img src={logo} alt="logo" />
+          <Inputs />
         </Logo>
-        <Inputs />
+
         <NavBar>
           <li>
             <NLink to="/">00 home</NLink>

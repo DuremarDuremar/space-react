@@ -28,6 +28,14 @@ export const Logo = styled.div`
     top: 50%;
     left: 9vw;
   }
+
+  div {
+    display: flex;
+    padding-bottom: 3vw;
+    padding-left: 4vw;
+    justify-content: space-around;
+    width: 100%;
+  }
 `;
 
 export const Form = styled.form`
@@ -65,5 +73,17 @@ export const NLink = styled(NavLink)`
       position: absolute;
       bottom: -24px;
     }
+  }
+`;
+
+export const Button = styled.button`
+  color: #fff;
+  background-color: #7d7e83;
+  opacity: 0.5;
+  width: 10vw;
+  height: 25px;
+  border-radius: 10px;
+  &:hover {
+    opacity: 0.8;
   }
 `;

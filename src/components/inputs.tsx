@@ -28,6 +28,9 @@ const Inputs: FC<IProps> = ({ user }) => {
     reset();
   };
 
+  const isValidEmail =
+    /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
   console.log("value", value);
   console.log("errors", errors);
 
@@ -43,10 +46,16 @@ const Inputs: FC<IProps> = ({ user }) => {
       {!user && (
         <div>
           <input
-            {...register("email", { required: true, minLength: 6 })}
+            {...register("email", {
+              required: true,
+              pattern: {
+                value: isValidEmail,
+                message: "Please enter a valid email",
+              },
+            })}
             placeholder="email"
           />
-          <p>{errors.email?.type}</p>
+          <p>{errors.email?.message}</p>
         </div>
       )}
       <div>

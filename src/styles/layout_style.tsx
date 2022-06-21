@@ -29,20 +29,19 @@ export const Logo = styled.div`
     left: 9vw;
   }
 
-  div {
-    display: flex;
-    padding-bottom: 3vw;
-    padding-left: 4vw;
-    justify-content: space-around;
-    width: 100%;
+  > div {
+    padding-left: 8vw;
   }
 `;
 
 export const Form = styled.form`
   display: flex;
   color: #fff;
-  padding-bottom: 3vw;
-  padding-left: 4vw;
+  /* justify-content: center; */
+
+  /* div {
+    width: 70px;
+  } */
 
   p {
     color: #7d7e83;
@@ -76,6 +75,14 @@ export const NLink = styled(NavLink)`
   }
 `;
 
+export const WrapperButton = styled.div`
+  display: flex;
+  padding-bottom: 3vw;
+  padding-left: 4vw;
+  justify-content: space-around;
+  width: 100%;
+`;
+
 export const Button = styled.button`
   color: #fff;
   background-color: #7d7e83;
@@ -83,6 +90,7 @@ export const Button = styled.button`
   width: 10vw;
   height: 25px;
   border-radius: 10px;
+  transition: all 0.7s ease-in-out;
   &:hover {
     opacity: 0.8;
   }

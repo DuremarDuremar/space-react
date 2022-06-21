@@ -1,21 +1,35 @@
-import React, { FC } from "react";
+import React, { FC, useState } from "react";
 import { Outlet } from "react-router-dom";
 
 import Inputs from "./inputs";
 import logo from "../assets/shared/logo.svg";
-import { Header, Logo, NavBar, NLink, Button } from "../styles/layout_style";
+import {
+  Header,
+  Logo,
+  NavBar,
+  NLink,
+  Button,
+  WrapperButton,
+} from "../styles/layout_style";
 
 console.log("layout");
 
 const Layout: FC = () => {
+  const [user, setUser] = useState(true);
+  console.log(user);
+
   return (
     <>
       <Header>
         <Logo>
           <img src={logo} alt="logo" />
           <div>
-            <Button>SignIn</Button>
-            <Button>SignUp</Button>
+            <WrapperButton>
+              <Button onClick={() => setUser(!user)}>
+                {user ? "SignUp" : "SignIn"}
+              </Button>
+            </WrapperButton>
+            <Inputs user={user} />
           </div>
         </Logo>
 

@@ -30,18 +30,15 @@ export const Logo = styled.div`
   }
 
   > div {
-    padding-left: 8vw;
+    padding-left: 3vw;
   }
 `;
 
 export const Form = styled.form`
   display: flex;
   color: #fff;
-  /* justify-content: center; */
-
-  /* div {
-    width: 70px;
-  } */
+  justify-content: center;
+  width: 540px;
 
   p {
     color: #7d7e83;
@@ -78,8 +75,8 @@ export const NLink = styled(NavLink)`
 export const WrapperButton = styled.div`
   display: flex;
   padding-bottom: 3vw;
-  padding-left: 4vw;
-  justify-content: space-around;
+  /* padding-left: 2vw; */
+  justify-content: center;
   width: 100%;
 `;
 

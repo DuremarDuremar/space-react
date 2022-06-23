@@ -16,7 +16,7 @@ console.log("layout");
 
 const Layout: FC = () => {
   const [user, setUser] = useState(true);
-  console.log(user);
+  console.log("user", user);
 
   return (
     <>

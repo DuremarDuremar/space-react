@@ -33,6 +33,8 @@ export const Logo = styled.div<{
 
   > div {
     padding-left: 3vw;
+    display: flex;
+    flex-direction: ${(props) => (props.value ? "column-reverse" : "column")};
   }
 `;
 
@@ -46,6 +48,13 @@ export const Form = styled.form`
     color: #7d7e83;
     font-size: 10px;
   }
+`;
+
+export const Name = styled.div`
+  display: flex;
+  color: #fff;
+  justify-content: center;
+  width: 540px;
 `;
 
 export const NavBar = styled.ul`
@@ -74,9 +83,12 @@ export const NLink = styled(NavLink)`
   }
 `;
 
-export const WrapperButton = styled.div`
+export const WrapperButton = styled.div<{
+  value: string | null;
+}>`
   display: flex;
-  padding-bottom: 3vw;
+  padding: ${(props) => (props.value ? "3vw 0 0 0" : "0 0 3vw 0")};
+  /* padding-bottom: 3vw; */
   /* padding-left: 2vw; */
   justify-content: center;
   width: 100%;

@@ -1,8 +1,9 @@
 import React, { FC, useState } from "react";
 import { Outlet } from "react-router-dom";
-import { useTypeSelector } from "../hooks/redux_hook";
+import { useTypeSelector, useTypeDispatch } from "../hooks/redux_hook";
 
 import Inputs from "./inputs";
+import { userSlice } from "../store/reducers/user_reducer";
 import logo from "../assets/shared/logo.svg";
 import {
   Header,
@@ -11,13 +12,12 @@ import {
   NLink,
   Button,
   WrapperButton,
+  Name,
 } from "../styles/layout_style";
-
-console.log("layout");
 
 const Layout: FC = () => {
   const [user, setUser] = useState(true);
-
+  const dispatch = useTypeDispatch();
   const { name, id } = useTypeSelector((state) => state.userReducer);
 
   return (
@@ -26,12 +26,20 @@ const Layout: FC = () => {
         <Logo value={id}>
           <img src={logo} alt="logo" />
           <div>
-            <WrapperButton>
-              <Button onClick={() => setUser(!user)}>
-                {user ? "SignUp" : "SignIn"}
-              </Button>
+            <WrapperButton value={id}>
+              {id ? (
+                <Button
+                  onClick={() => dispatch(userSlice.actions.removeUser())}
+                >
+                  exit
+                </Button>
+              ) : (
+                <Button onClick={() => setUser(!user)}>
+                  {user ? "SignUp" : "SignIn"}
+                </Button>
+              )}
             </WrapperButton>
-            <Inputs user={user} />
+            {id ? <Name>Hello, {name} !</Name> : <Inputs user={user} />}
           </div>
         </Logo>
 

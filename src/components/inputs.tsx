@@ -23,39 +23,17 @@ interface IProps {
 }
 type updateType = {
   displayName: string;
-  photoURL: string;
 };
 
 const Inputs: FC<IProps> = ({ user }) => {
-  const [value, setValue] = useState<any>(null);
-
   const dispatch = useTypeDispatch();
+  const { name, id } = useTypeSelector((state) => state.userReducer);
+
   const auth = getAuth();
-
-  // const update: any = {
-  //   displayName: "Alias",
-  //   photoURL: "https://my-cdn.com/assets/user/123.png",
-  // };
-
-  const ff = (name: string) =>
-    auth.currentUser &&
-    updateProfile(auth.currentUser, {
-      displayName: name,
-      photoURL: "https://example.com/jane-q-user/profile.jpg",
-    })
-      .then(() => {
-        // Profile updated!
-        // ...
-      })
-      .catch((error) => {
-        // An error occurred
-        // ...
-      });
 
   const handleLogin = (email: string, password: string) => {
     signInWithEmailAndPassword(auth, email, password)
       .then((res: UserCredential) => {
-        setValue(res);
         dispatch(
           userSlice.actions.setUser({
             email: res.user.email,
@@ -71,8 +49,10 @@ const Inputs: FC<IProps> = ({ user }) => {
   const handleReg = (email: string, password: string, name: string) => {
     createUserWithEmailAndPassword(auth, email, password)
       .then((res: UserCredential) => {
-        ff(name);
-        setValue(res);
+        auth.currentUser &&
+          updateProfile(auth.currentUser, {
+            displayName: name,
+          });
         dispatch(
           userSlice.actions.setUser({
             email: res.user.email,
@@ -84,8 +64,6 @@ const Inputs: FC<IProps> = ({ user }) => {
       })
       .catch(console.error);
   };
-
-  console.log("value", value);
 
   const {
     register,

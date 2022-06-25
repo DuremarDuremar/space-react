@@ -1,5 +1,4 @@
-import React, { FC } from "react";
-import { useEffect } from "react";
+import React, { FC, useEffect } from "react";
 import { SpinnerDotted } from "spinners-react";
 
 import Slider from "../components/slider";

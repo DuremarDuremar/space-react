@@ -11,7 +11,9 @@ export const Header = styled.header`
   z-index: 3;
 `;
 
-export const Logo = styled.div`
+export const Logo = styled.div<{
+  value: string | null;
+}>`
   padding-left: 2vw;
   position: relative;
   width: 50%;

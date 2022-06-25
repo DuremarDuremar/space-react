@@ -1,5 +1,4 @@
-import React, { FC } from "react";
-import { useEffect } from "react";
+import React, { FC, useEffect } from "react";
 import { SpinnerDotted } from "spinners-react";
 
 import Slider from "../components/slider";
@@ -14,7 +13,6 @@ const Technology: FC = () => {
 
   useEffect(() => {
     !data.length && dispatch(fetchTechnology());
-    !data.length && console.log(data);
   }, [data, dispatch]);
 
   return (

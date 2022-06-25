@@ -1,5 +1,6 @@
 import React, { FC, useState } from "react";
 import { Outlet } from "react-router-dom";
+import { useTypeSelector } from "../hooks/redux_hook";
 
 import Inputs from "./inputs";
 import logo from "../assets/shared/logo.svg";
@@ -16,12 +17,13 @@ console.log("layout");
 
 const Layout: FC = () => {
   const [user, setUser] = useState(true);
-  console.log("user", user);
+
+  const { name, id } = useTypeSelector((state) => state.userReducer);
 
   return (
     <>
       <Header>
-        <Logo>
+        <Logo value={id}>
           <img src={logo} alt="logo" />
           <div>
             <WrapperButton>

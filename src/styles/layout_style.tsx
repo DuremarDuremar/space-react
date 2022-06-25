@@ -43,10 +43,31 @@ export const Form = styled.form`
   color: #fff;
   justify-content: center;
   width: 540px;
-
+  div {
+    position: relative;
+  }
+  input {
+    background-color: #fff;
+    border: 2px solid #7d7e83;
+    padding-left: 24px;
+    max-width: 140px;
+  }
+  button {
+    border-radius: 20%;
+    i {
+      border-radius: 20%;
+      transition: all 0.7s ease-in-out;
+      &:hover {
+        color: #fff;
+        background-color: #43cea2;
+      }
+    }
+  }
   p {
     color: #7d7e83;
     font-size: 10px;
+    position: absolute;
+    top: 30px;
   }
 `;
 

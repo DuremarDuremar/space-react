@@ -31,7 +31,7 @@ const Layout: FC = () => {
                 <Button
                   onClick={() => dispatch(userSlice.actions.removeUser())}
                 >
-                  exit
+                  Exit
                 </Button>
               ) : (
                 <Button onClick={() => setUser(!user)}>

@@ -119,7 +119,9 @@ const Inputs: FC<IProps> = ({ user }) => {
         />
         <p>{errors.password?.type}</p>
       </div>
-      <button type="submit">submit</button>
+      <button type="submit">
+        <i className="fas fa-check fa-2x"></i>
+      </button>
     </Form>
   );
 };

@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import Slider from "react-slick";
+import { respon } from "../variables";
 
 export const WrapperSlider = styled(Slider)<{
   typeSlider: string;
@@ -23,7 +24,9 @@ export const WrapperSlider = styled(Slider)<{
     display: flex;
   }
   .slick-dots {
-    /* width: 100%; */
+    @media ${respon.Max1024} {
+      display: none;
+    }
     padding: 0;
     margin: 0;
     position: absolute;
@@ -124,7 +127,10 @@ export const ItemSlider = styled.div<{
   display: flex !important;
   flex-direction: ${(props) =>
     props.typeSlider === "destination" ? "row" : "row-reverse"};
-  /* overflow: hidden; */
+  @media ${respon.Max1024} {
+    position: relative;
+    justify-content: center;
+  }
 
   h2 {
     font-size: ${(props) =>
@@ -159,6 +165,11 @@ export const Img = styled.div<{
 }>`
   flex: ${(props) =>
     props.typeSlider === "technology" ? "0 0 42%" : "0 0 50%"};
+
+  @media ${respon.Max1024} {
+    position: absolute;
+    opacity: 0.6;
+  }
   img {
     max-width: 380px;
     /* height: 90%; */
@@ -177,4 +188,5 @@ export const Text = styled.div<{
   flex: ${(props) =>
     props.typeSlider === "technology" ? "0 0 42%" : "0 0 50%"};
   padding-top: 100px;
+  z-index: 3;
 `;

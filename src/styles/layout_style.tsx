@@ -134,10 +134,11 @@ export const WrapperButton = styled.div<{
 }>`
   display: flex;
   padding: ${(props) => (props.value ? "3vw 0 0 0" : "0 0 3vw 0")};
-  /* padding-bottom: 3vw; */
-  /* padding-left: 2vw; */
   justify-content: center;
   width: 100%;
+  @media ${respon.Max1200} {
+    width: auto;
+  }
 `;
 
 export const Button = styled.button`

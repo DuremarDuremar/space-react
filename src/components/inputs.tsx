@@ -8,7 +8,7 @@ import {
   updateProfile,
 } from "firebase/auth";
 
-import { useTypeDispatch, useTypeSelector } from "../hooks/redux_hook";
+import { useTypeDispatch } from "../hooks/redux_hook";
 import { userSlice } from "../store/reducers/user_reducer";
 import { Form } from "../styles/layout_style";
 
@@ -27,7 +27,6 @@ type updateType = {
 
 const Inputs: FC<IProps> = ({ user }) => {
   const dispatch = useTypeDispatch();
-  const { name, id } = useTypeSelector((state) => state.userReducer);
 
   const auth = getAuth();
 

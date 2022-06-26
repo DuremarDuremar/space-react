@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { respon } from "../variables";
 
 import backgroundDesktop from "../assets/home/background-home-desktop.jpg";
 export const Content = styled.div`
@@ -17,6 +18,10 @@ export const Wrapper = styled.div`
   height: 220px;
   padding: 0 8vw;
   margin-bottom: -200px;
+  @media ${respon.Max1024} {
+    display: block;
+    margin-bottom: 0;
+  }
 `;
 
 export const ContainerLeft = styled.div`
@@ -24,6 +29,10 @@ export const ContainerLeft = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  @media ${respon.Max1024} {
+    align-items: center;
+    margin-bottom: 40px;
+  }
   h5 {
     color: #7d7e83;
     font-size: 1.5vw;

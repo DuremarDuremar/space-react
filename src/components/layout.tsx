@@ -22,45 +22,50 @@ const Layout: FC = () => {
   const dispatch = useTypeDispatch();
   const { name, id } = useTypeSelector((state) => state.userReducer);
 
+  const headerForm = () => {
+    return (
+      <WrapperReg value={id}>
+        <WrapperButton value={id}>
+          {id ? (
+            <Button onClick={() => dispatch(userSlice.actions.removeUser())}>
+              Exit
+            </Button>
+          ) : (
+            <Button onClick={() => setUser(!user)}>
+              {user ? "SignUp" : "SignIn"}
+            </Button>
+          )}
+        </WrapperButton>
+        {id ? <Name>Hello, {name} !</Name> : <Inputs user={user} />}
+      </WrapperReg>
+    );
+  };
+
   return (
     <>
       <Header>
-        <Logo>
-          <img src={logo} alt="logo" />
-          <MediaQuery minWidth={1200}>
-            <WrapperReg value={id}>
-              <WrapperButton value={id}>
-                {id ? (
-                  <Button
-                    onClick={() => dispatch(userSlice.actions.removeUser())}
-                  >
-                    Exit
-                  </Button>
-                ) : (
-                  <Button onClick={() => setUser(!user)}>
-                    {user ? "SignUp" : "SignIn"}
-                  </Button>
-                )}
-              </WrapperButton>
-              {id ? <Name>Hello, {name} !</Name> : <Inputs user={user} />}
-            </WrapperReg>{" "}
-          </MediaQuery>
-        </Logo>
+        <MediaQuery maxWidth={1200}>{headerForm()}</MediaQuery>
+        <div className="dec">
+          <Logo>
+            <img src={logo} alt="logo" />
+            <MediaQuery minWidth={1200}>{headerForm()}</MediaQuery>
+          </Logo>
 
-        <NavBar>
-          <li>
-            <NLink to="/">00 home</NLink>
-          </li>
-          <li>
-            <NLink to="destination">01 destination</NLink>
-          </li>
-          <li>
-            <NLink to="crew">02 crew</NLink>
-          </li>
-          <li>
-            <NLink to="technology">03 technology</NLink>
-          </li>
-        </NavBar>
+          <NavBar>
+            <li>
+              <NLink to="/">00 home</NLink>
+            </li>
+            <li>
+              <NLink to="destination">01 destination</NLink>
+            </li>
+            <li>
+              <NLink to="crew">02 crew</NLink>
+            </li>
+            <li>
+              <NLink to="technology">03 technology</NLink>
+            </li>
+          </NavBar>
+        </div>
       </Header>
       <Outlet />
     </>

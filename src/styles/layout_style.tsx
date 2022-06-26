@@ -4,13 +4,18 @@ import { NavLink } from "react-router-dom";
 import { respon } from "../variables";
 
 export const Header = styled.header`
-  display: flex;
-  justify-content: space-between;
-  margin-top: 40px;
   right: 0;
   position: absolute;
   width: 100%;
   z-index: 3;
+  .dec {
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-between;
+    @media ${respon.Max1200} {
+      margin-top: 0;
+    }
+  }
 `;
 
 export const Logo = styled.div`
@@ -46,9 +51,10 @@ export const WrapperReg = styled.div<{
   display: flex;
   flex-direction: ${(props) => (props.value ? "column-reverse" : "column")};
 
-  /* @media ${respon.Max1200} {
-    display: none;
-  } */
+  @media ${respon.Max1200} {
+    flex-direction: row;
+    padding-top: 12px;
+  }
 `;
 
 export const Form = styled.form`
@@ -67,6 +73,7 @@ export const Form = styled.form`
   }
   button {
     border-radius: 20%;
+    height: 30px;
     i {
       border-radius: 20%;
       transition: all 0.7s ease-in-out;
@@ -99,8 +106,10 @@ export const NavBar = styled.ul`
   padding: 0 40px 0 25px;
   align-items: center;
   justify-content: space-around;
+
   @media ${respon.Max1200} {
     width: 77%;
+    height: 60px;
   }
 `;
 

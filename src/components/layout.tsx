@@ -1,6 +1,7 @@
 import React, { FC, useState } from "react";
 import { Outlet } from "react-router-dom";
 import { useTypeSelector, useTypeDispatch } from "../hooks/redux_hook";
+import MediaQuery from "react-responsive";
 
 import Inputs from "./inputs";
 import { userSlice } from "../store/reducers/user_reducer";
@@ -11,6 +12,7 @@ import {
   NavBar,
   NLink,
   Button,
+  WrapperReg,
   WrapperButton,
   Name,
 } from "../styles/layout_style";
@@ -23,24 +25,26 @@ const Layout: FC = () => {
   return (
     <>
       <Header>
-        <Logo value={id}>
+        <Logo>
           <img src={logo} alt="logo" />
-          <div>
-            <WrapperButton value={id}>
-              {id ? (
-                <Button
-                  onClick={() => dispatch(userSlice.actions.removeUser())}
-                >
-                  Exit
-                </Button>
-              ) : (
-                <Button onClick={() => setUser(!user)}>
-                  {user ? "SignUp" : "SignIn"}
-                </Button>
-              )}
-            </WrapperButton>
-            {id ? <Name>Hello, {name} !</Name> : <Inputs user={user} />}
-          </div>
+          <MediaQuery minWidth={1200}>
+            <WrapperReg value={id}>
+              <WrapperButton value={id}>
+                {id ? (
+                  <Button
+                    onClick={() => dispatch(userSlice.actions.removeUser())}
+                  >
+                    Exit
+                  </Button>
+                ) : (
+                  <Button onClick={() => setUser(!user)}>
+                    {user ? "SignUp" : "SignIn"}
+                  </Button>
+                )}
+              </WrapperButton>
+              {id ? <Name>Hello, {name} !</Name> : <Inputs user={user} />}
+            </WrapperReg>{" "}
+          </MediaQuery>
         </Logo>
 
         <NavBar>

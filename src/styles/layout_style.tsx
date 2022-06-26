@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 
+import { respon } from "../variables";
+
 export const Header = styled.header`
   display: flex;
   justify-content: space-between;
@@ -11,12 +13,10 @@ export const Header = styled.header`
   z-index: 3;
 `;
 
-export const Logo = styled.div<{
-  value: string | null;
-}>`
+export const Logo = styled.div`
   padding-left: 2vw;
   position: relative;
-  width: 50%;
+  /* width: 48%; */
   display: flex;
   align-items: center;
 
@@ -29,13 +29,26 @@ export const Logo = styled.div<{
     position: absolute;
     top: 50%;
     left: 9vw;
+    @media ${respon.Max1200} {
+      display: none;
+    }
   }
 
-  > div {
-    padding-left: 3vw;
-    display: flex;
-    flex-direction: ${(props) => (props.value ? "column-reverse" : "column")};
-  }
+  /* > div {
+    
+  } */
+`;
+
+export const WrapperReg = styled.div<{
+  value: string | null;
+}>`
+  padding-left: 3vw;
+  display: flex;
+  flex-direction: ${(props) => (props.value ? "column-reverse" : "column")};
+
+  /* @media ${respon.Max1200} {
+    display: none;
+  } */
 `;
 
 export const Form = styled.form`
@@ -86,6 +99,9 @@ export const NavBar = styled.ul`
   padding: 0 40px 0 25px;
   align-items: center;
   justify-content: space-around;
+  @media ${respon.Max1200} {
+    width: 77%;
+  }
 `;
 
 export const NLink = styled(NavLink)`

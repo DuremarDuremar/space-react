@@ -1,4 +1,6 @@
 import React, { FC } from "react";
+import { useMediaQuery } from "react-responsive";
+
 import { WrapperSlider, ItemSlider, Img, Text } from "../styles/slider_style";
 
 interface IProps {
@@ -7,22 +9,16 @@ interface IProps {
 }
 
 const Slider: FC<IProps> = ({ slids, typeSlider }) => {
+  const res1024 = useMediaQuery({ query: "(max-width: 1024px)" });
+
   const dotsItems = slids.map((item: any) => item.name);
 
   const settings = {
     className: "",
-    arrows: false,
+    arrows: res1024 ? true : false,
     dots: true,
     appendDots: (dots: any) => (
-      <div
-        style={
-          {
-            // backgroundColor: "#ddd",
-            // borderRadius: "10px",
-            // padding: "10px",
-          }
-        }
-      >
+      <div>
         <ul style={{ margin: "0px" }}> {dots} </ul>
       </div>
     ),

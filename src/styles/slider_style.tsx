@@ -10,6 +10,9 @@ export const WrapperSlider = styled(Slider)<{
   padding: ${(props) =>
     props.typeSlider === "technology" ? "20px 0 0 70px" : "20px 70px 0 70px"};
   max-height: 400px;
+  @media ${respon.Max1024} {
+    padding: 0;
+  }
 
   .slick-slider {
   }
@@ -23,6 +26,19 @@ export const WrapperSlider = styled(Slider)<{
   .slick-track {
     display: flex;
   }
+
+  .slick-arrow {
+    position: absolute;
+  }
+  .slick-prev {
+    top: 50%;
+    left: 15px;
+  }
+  .slick-next {
+    top: 50%;
+    right: 15px;
+  }
+
   .slick-dots {
     @media ${respon.Max1024} {
       display: none;

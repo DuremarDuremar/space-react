@@ -95,7 +95,8 @@ export const Name = styled.div`
   display: flex;
   color: #fff;
   justify-content: center;
-  width: 540px;
+  max-width: 540px;
+  width: 100%;
 `;
 
 export const NavBar = styled.ul`
@@ -138,6 +139,7 @@ export const WrapperButton = styled.div<{
   width: 100%;
   @media ${respon.Max1200} {
     width: auto;
+    padding: 0 0 15px 0;
   }
 `;
 

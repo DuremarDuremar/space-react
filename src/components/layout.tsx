@@ -22,6 +22,9 @@ const Layout: FC = () => {
   const dispatch = useTypeDispatch();
   const { name, id } = useTypeSelector((state) => state.userReducer);
 
+  const [adapForm, setAdapForm] = useState(false);
+  const [adapNav, setAdapNav] = useState(false);
+
   const headerForm = () => {
     return (
       <WrapperReg value={id}>

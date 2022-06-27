@@ -196,6 +196,9 @@ export const Img = styled.div<{
     background-size: cover;
     margin: ${(props) =>
       props.typeSlider === "technology" ? "0 0 0 auto" : " 0px auto"};
+    @media ${respon.Max1024} {
+      padding-left: ${(props) => props.typeSlider === "crew" && "8vw"};
+    }
   }
 `;
 
@@ -207,11 +210,18 @@ export const Text = styled.div<{
   padding-top: 100px;
   @media ${respon.Max1024} {
     z-index: 2;
+    padding-top: ${(props) => props.typeSlider === "crew" && "270px"};
+    flex: 0 0 82%;
   }
 `;
 
 export const ArrowSlider = styled.div`
   position: absolute;
   z-index: 3;
+  color: #7d7e83;
+  transition: color 0.3s ease-in-out;
   cursor: pointer;
+  :hover {
+    color: #fff;
+  }
 `;

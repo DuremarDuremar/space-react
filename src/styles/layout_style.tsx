@@ -15,6 +15,9 @@ export const Header = styled.header`
     @media ${respon.Max1200} {
       margin-top: 0;
     }
+    @media ${respon.Max729} {
+      display: block;
+    }
   }
 `;
 
@@ -24,6 +27,14 @@ export const Logo = styled.div`
   /* width: 48%; */
   display: flex;
   align-items: center;
+  @media ${respon.Max729} {
+    display: block;
+    text-align: center;
+
+    img {
+      width: 40px;
+    }
+  }
 
   &:after {
     content: "";
@@ -62,6 +73,12 @@ export const Form = styled.form`
   color: #fff;
   justify-content: center;
   width: 540px;
+
+  @media ${respon.Max729} {
+    width: auto;
+    flex-wrap: wrap;
+  }
+
   div {
     position: relative;
   }
@@ -112,10 +129,17 @@ export const NavBar = styled.ul`
     width: 77%;
     height: 60px;
   }
+  @media ${respon.Max729} {
+    width: 100%;
+    padding: 0 5px;
+  }
 `;
 
 export const NLink = styled(NavLink)`
   color: #fff;
+  @media ${respon.Max729} {
+    font-size: 14px;
+  }
   &.active {
     position: relative;
     &:after {

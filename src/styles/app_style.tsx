@@ -1,4 +1,5 @@
 import styled, { createGlobalStyle } from "styled-components";
+import { respon } from "../variables";
 
 export const Global = createGlobalStyle`
 * {
@@ -65,6 +66,10 @@ export const Content = styled.div`
     color: #fff;
     padding-top: 150px;
     padding-left: 100px;
+    @media ${respon.Max729} {
+      padding-top: 190px;
+      font-size: 14px;
+    }
   }
   .spinner {
     display: flex;

@@ -27,9 +27,10 @@ export const WrapperSlider = styled(Slider)<{
     display: flex;
   }
 
-  .slick-arrow {
+  /* .slick-arrow {
     position: absolute;
-  }
+    z-index: 3;
+  } */
   .slick-prev {
     top: 50%;
     left: 15px;
@@ -204,5 +205,13 @@ export const Text = styled.div<{
   flex: ${(props) =>
     props.typeSlider === "technology" ? "0 0 42%" : "0 0 50%"};
   padding-top: 100px;
+  @media ${respon.Max1024} {
+    z-index: 2;
+  }
+`;
+
+export const ArrowSlider = styled.div`
+  position: absolute;
   z-index: 3;
+  cursor: pointer;
 `;

@@ -68,7 +68,7 @@ export const Form = styled.form`
   input {
     background-color: #fff;
     border: 2px solid #7d7e83;
-    padding-left: 24px;
+    padding-left: 14px;
     max-width: 140px;
   }
   button {

@@ -1,7 +1,13 @@
 import React, { FC } from "react";
 import { useMediaQuery } from "react-responsive";
 
-import { WrapperSlider, ItemSlider, Img, Text } from "../styles/slider_style";
+import {
+  WrapperSlider,
+  ItemSlider,
+  Img,
+  Text,
+  ArrowSlider,
+} from "../styles/slider_style";
 
 interface IProps {
   slids: any;
@@ -16,6 +22,16 @@ const Slider: FC<IProps> = ({ slids, typeSlider }) => {
   const settings = {
     className: "",
     arrows: res1024 ? true : false,
+    nextArrow: (
+      <ArrowSlider>
+        <i className="fas fa-arrow-right fa-2x"></i>
+      </ArrowSlider>
+    ),
+    prevArrow: (
+      <ArrowSlider>
+        <i className="fas fa-arrow-left fa-2x"></i>
+      </ArrowSlider>
+    ),
     dots: true,
     appendDots: (dots: any) => (
       <div>
@@ -52,8 +68,6 @@ const Slider: FC<IProps> = ({ slids, typeSlider }) => {
     slidesToScroll: 1,
     adaptiveHeight: true,
   };
-
-  console.log(typeSlider);
 
   return (
     <WrapperSlider {...settings} typeSlider={typeSlider}>

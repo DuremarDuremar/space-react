@@ -62,6 +62,7 @@ export const Content = styled.div`
   font-family: "Yatra One", cursive;
   position: relative;
   overflow: hidden;
+
   h3 {
     color: #fff;
     padding-top: 150px;

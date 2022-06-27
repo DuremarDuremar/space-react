@@ -187,6 +187,7 @@ export const Img = styled.div<{
     position: absolute;
     opacity: 0.6;
   }
+
   img {
     max-width: 380px;
     /* height: 90%; */

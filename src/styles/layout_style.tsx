@@ -28,12 +28,7 @@ export const Logo = styled.div`
   display: flex;
   align-items: center;
   @media ${respon.Max729} {
-    display: block;
-    text-align: center;
-
-    img {
-      width: 40px;
-    }
+    display: none;
   }
 
   &:after {
@@ -73,7 +68,7 @@ export const Form = styled.form`
   color: #fff;
   justify-content: center;
   width: 540px;
-
+  row-gap: 7px;
   @media ${respon.Max729} {
     width: auto;
     flex-wrap: wrap;
@@ -91,6 +86,7 @@ export const Form = styled.form`
   button {
     border-radius: 20%;
     height: 30px;
+
     i {
       border-radius: 20%;
       transition: all 0.7s ease-in-out;
